@@ -8,5 +8,5 @@ dnu build src/Serilog.Sinks.Console/ --configuration Release --out /artefacts/Se
 dnu pack src/Serilog.Sinks.Console/ --configuration Release --out /artefacts/Serilog.Sinks.Console/packages/
 
 dnu restore src/Serilog.Enrichers.Thread/
-dnu build src/Serilog.Sinks.Thread/ --configuration Release --out /artefacts/Serilog.Enrichers.Thread/bin/
-dnu pack src/Serilog.Sinks.Thread/ --configuration Release --out /artefacts/Serilog.Enrichers.Thread/packages/
+dnu build src/Serilog.Enrichers.Thread/ --configuration Release --out /artefacts/Serilog.Enrichers.Thread/bin/
+dnu pack src/Serilog.Enrichers.Thread/ --configuration Release --out /artefacts/Serilog.Enrichers.Thread/packages/
