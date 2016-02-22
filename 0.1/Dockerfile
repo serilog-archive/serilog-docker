@@ -8,5 +8,6 @@ ENV DNX_BRANCH dev
 # Serilog
 RUN git clone https://github.com/serilog/serilog.git
 WORKDIR /serilog
-
-RUN sh build.sh
+ADD assets /serilog/assets 
+ADD testapp /serilog/testapp
+RUN sh assets/build.sh
