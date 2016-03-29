@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  serilog:
+    build: . 
+    image: serilog
+  # consoleapp:
+  #   image: serilog
+  #   depends_on: 
+  #     - serilog
