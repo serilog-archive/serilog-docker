@@ -2,7 +2,7 @@
 A docker image for testing Serilog on *nix platforms
 
 - Clone the repo
-- Run `make`
+- Run `docker-compose up`
 
 ```
 Step 1 : FROM microsoft/aspnet
@@ -33,4 +33,4 @@ Removing intermediate container xxxxxxxxx
 Successfully built xxxxxxxxxx
 ```
 
-- Run `docker run -t -i Serilog:0.1`
+- Run `docker run -t -i serilog`

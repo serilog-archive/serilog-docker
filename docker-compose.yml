@@ -4,7 +4,7 @@ services:
   serilog:
     build: . 
     image: serilog
-  # consoleapp:
-  #   image: serilog
-  #   depends_on: 
-  #     - serilog
+  consoleapp:
+    image: serilog
+    depends_on: 
+      - serilog
