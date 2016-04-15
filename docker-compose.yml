@@ -9,6 +9,9 @@ services:
     image: serilog-console-sample
     depends_on: 
       - serilog 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./console-sample/src:/src
     
     
     

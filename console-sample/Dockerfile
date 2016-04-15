@@ -1,8 +1,8 @@
-FROM microsoft/aspnet
-  
+# FROM microsoft/aspnet
+FROM microsoft/dotnet
+
+COPY entry_point.sh entry_point.sh
+RUN chmod +x /entry_point.sh
+
 ADD src/console /console-sample
-RUN dnu restore console-sample /
-    && dnu build console-sample
-    # && dnu build console-sample --out /console-sample/bin/
-    # && dnu build console-sample --configuration Release --out /console-sample/bin/
-    # && dnu pack console-sample --configuration Release --out /console-sample/packages/
+ENTRYPOINT ["/entry_point.sh"]
