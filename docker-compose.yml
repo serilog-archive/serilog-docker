@@ -4,30 +4,8 @@ services:
   serilog:
     build: ./serilog
     image: serilog
+    command: sh entry_point.sh build
   consoleapp:
     build: ./console-sample
     image: serilog-console-sample
-    depends_on: 
-      - serilog 
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./console-sample/src:/src
-    
-    
-    
-    
-    
-    
-    
-#   webapp:
-#     image: microsoft/aspnet
-
-    
-#     FROM microsoft/aspnet
-
-# COPY . /app
-# WORKDIR /app
-# RUN ["dnu", "restore"]
-
-# EXPOSE 5004
-# ENTRYPOINT ["dnx", "-p", "project.json", "kestrel"]
+    command: sh entry_point.sh run

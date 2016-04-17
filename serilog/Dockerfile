@@ -1,16 +1,18 @@
-FROM microsoft/aspnet
+FROM microsoft/dotnet
 
 #Dependencies
-ENV DNX_BRANCH dev 
+ENV SERILOG_BRANCH dev 
+ENV SERILOG_REPO https://github.com/serilog/serilog.git
 
-# Pull Serilog and build
+# Get Git and Friends
 RUN apt-get update \ 
 	&& apt-get install -y wget curl git \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /src
-WORKDIR /src
-ADD build.sh /src/ 
-RUN sh build.sh
+COPY entry_point.sh entry_point.sh
+RUN chmod +x /entry_point.sh
+
+ENTRYPOINT ["/entry_point.sh"]
+CMD ["build"]
