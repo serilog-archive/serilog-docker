@@ -9,9 +9,8 @@
     },
 
     "frameworks": {
-        "netstandardapp": {
-            "Serilog": "2.0.0-beta-523",
-            "Serilog.Sinks.Console": "2.0.0-beta-700"
+        "dnxcore50": {
+            "Serilog": "2.0.0-beta-523"
         }
     }
 }

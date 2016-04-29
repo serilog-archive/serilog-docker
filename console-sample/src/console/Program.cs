@@ -8,7 +8,7 @@ namespace ConsoleApp
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.ColoredConsole()
+                // .WriteTo.ColoredConsole()
                 .MinimumLevel.Debug()
                 .CreateLogger();
             
