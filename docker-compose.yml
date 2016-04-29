@@ -4,8 +4,8 @@ services:
   serilog:
     build: ./serilog
     image: serilog
-    command: sh entry_point.sh build
+    command: build
   consoleapp:
     build: ./console-sample
     image: serilog-console-sample
-    command: sh entry_point.sh run
+    command: run

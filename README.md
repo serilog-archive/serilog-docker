@@ -23,4 +23,4 @@ Removing intermediate container xxxxxxxxx
 Successfully built xxxxxxxxxx
 ```
 
-- Run `docker run -it serilog`
+- Run `docker run -it serilog build`
