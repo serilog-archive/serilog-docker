@@ -1,0 +1,29 @@
+﻿{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "Serilog.Sinks.Literate": "2.0.0-rc-25",
+    "Serilog.Extensions.Logging": "1.0.0-rc2-10104",
+    "System.Collections.Concurrent": "4.0.12-rc2-24027",
+    "System.Threading.Tasks": "4.0.11-rc2-24027",
+    "System.Net.Http": "4.0.1-rc2-24027"
+  },
+
+  "frameworks": { 
+    "netcoreapp1.0": {
+      "define": [ "ASYNCLOCAL" ],
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0-rc2-3002702"
+        }
+      },
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}

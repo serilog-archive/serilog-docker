@@ -4,8 +4,3 @@ services:
   serilog:
     build: ./serilog
     image: serilog
-    command: build
-  consoleapp:
-    build: ./console-sample
-    image: serilog-console-sample
-    command: run

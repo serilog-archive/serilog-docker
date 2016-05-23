@@ -1,8 +1,10 @@
 # serilog-docker
-A docker image for testing Serilog on *nix platforms
+A docker image for testing Serilog on *nix platforms.  Also some sample apps.
 
+
+## Getting started
 - Clone the repo
-- Run `docker-compose build`
+- Run `docker-compose up`
 
 ```
 Building serilog
@@ -16,3 +18,8 @@ Successfully built xxxxxxxxxx
 ```
 
 - Run `docker run -it serilog build`
+
+
+docker-compose -f samples.yml up
+
+ 

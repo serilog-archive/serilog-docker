@@ -2,4 +2,4 @@
 
 cd sample
 dotnet restore
-dotnet run 
+dotnet run

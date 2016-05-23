@@ -14,5 +14,4 @@ RUN apt-get update \
 COPY entry_point.sh entry_point.sh
 RUN chmod +x /entry_point.sh
 
-ENTRYPOINT ["/entry_point.sh"]
-CMD ["build"]
+ENTRYPOINT ["/entry_point.sh"] 

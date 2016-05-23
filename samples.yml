@@ -1,0 +1,14 @@
+version: '2'
+
+services: 
+  consoleapp:
+    build: ./console-sample
+    image: serilog-console-sample
+    links:
+      - websample
+  websample:
+    build: ./web-sample
+    image: serilog-web-sample 
+    ports:
+      - 5000:5000
+    
