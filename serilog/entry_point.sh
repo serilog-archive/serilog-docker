@@ -1,5 +1,6 @@
 #!/bin/bash
- 
+
+rm serilog
 git clone -b $SERILOG_BRANCH $SERILOG_REPO
 
 cd serilog/
@@ -13,5 +14,5 @@ dotnet build -f netstandard1.3 -c Release
 cd ../..
 cd test/Serilog.Tests/ 
 
-dotnet build -f netcoreapp1.0
+dotnet build -f netcoreapp1.0 -c Release
 dotnet test -f netcoreapp1.0  -c Release
