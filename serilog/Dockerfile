@@ -1,4 +1,4 @@
-FROM microsoft/dotnet
+FROM microsoft/dotnet 
 
 #Dependencies
 ENV SERILOG_BRANCH dev 
