@@ -1,6 +1,8 @@
 # serilog-docker
 A docker image for testing Serilog on *nix platforms.  Also some sample apps.
 
+[![SerilogCast](https://asciinema.org/a/47600.png)](https://asciinema.org/a/47600)
+
 ## PreReqs
 
 * Docker (easiest with [Docker Toolbox](https://www.docker.com/products/docker-toolbox) or [Docker Beta](https://beta.docker.com/))
