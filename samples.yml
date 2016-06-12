@@ -1,6 +1,11 @@
 version: '2'
 
 services: 
+  fswebsample:
+    build: ./fsharp-kestrel-sample
+    image: serilog-fsharp-kestrel-sample 
+    ports:
+      - 5001:5001      
   consoleapp:
     build: ./console-sample
     image: serilog-console-sample

@@ -46,6 +46,22 @@ namespace Sample
                 {
                     Log.Error(ex, "An error occured for HTTP GET to http://websample:5000");
                 }
+                
+                Log.Information("Serilog Console checking F# Web Sample at http://fswebsample:5001"); 
+                try
+                {
+                    using (var client = new HttpClient())
+                    using (var response = await client.GetAsync("http://fswebsample:5001"))
+                    using (var content = response.Content)
+                    { 
+                        string result = await content.ReadAsStringAsync();
+                        logger.LogInformation(result);
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    Log.Error(ex, "An error occured for HTTP GET to http://fswebsample:5001");
+                }
            
                 Task.Delay(3000).Wait(); 
             }
