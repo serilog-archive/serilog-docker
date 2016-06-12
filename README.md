@@ -51,10 +51,11 @@ This repo also contains the following samples
 
 * Console App
 * Web App
+* FSharp Web App
 
 To run these, run `docker-compose -f samples.yml up`
 
-This will build & run the samples. The console app periodically does a HTTP GET to the sample web app. Both are configured to use Serilog and `Serilog.Extensions.Logging`.   
+This will build & run the samples. The console app periodically does a HTTP GET to the sample web apps. Both are configured to use Serilog and `Serilog.Extensions.Logging`.   
 
 ### Example Output
 
