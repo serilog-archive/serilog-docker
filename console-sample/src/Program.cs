@@ -12,8 +12,9 @@ namespace Sample
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
+                .MinimumLevel.Debug() 
                 .WriteTo.LiterateConsole()
+                .WriteTo.EventCollector("http://splunk:8088/services/collector","00112233-4455-6677-8899-AABBCCDDEEFF")
                 .CreateLogger();
 
             Microsoft.Extensions.Logging.ILogger logger = new LoggerFactory()
@@ -63,7 +64,7 @@ namespace Sample
                     Log.Error(ex, "An error occured for HTTP GET to http://fswebsample:5001");
                 }
            
-                Task.Delay(3000).Wait(); 
+                await Task.Delay(3000); 
             }
          }
     }

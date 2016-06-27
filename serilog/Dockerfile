@@ -9,7 +9,7 @@ RUN apt-get update \
 	&& apt-get install -y wget curl git \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* 
 
 COPY entry_point.sh entry_point.sh
 RUN chmod +x /entry_point.sh
