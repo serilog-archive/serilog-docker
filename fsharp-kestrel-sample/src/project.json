@@ -6,19 +6,18 @@
     "compile": { "includeFiles": [ "Program.fs" ] }
   },
   "dependencies": {
-    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160316",
+    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-*",
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-3002302"
+      "version": "1.0.0"
     },
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
-    "Serilog.Extensions.Logging": "1.0.0-rc2-10110",
-    "Serilog.Sinks.Literate": "2.0.0-rc-25",
-    "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final",
-    
-    "Microsoft.Extensions.Configuration": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Serilog.Extensions.Logging": "1.0.0",
+    "Serilog.Sinks.Literate": "2.0.0",
+    "Microsoft.Extensions.Logging": "1.0.0",
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0",
+    "Microsoft.Extensions.Configuration": "1.0.0"
   },
   "tools": {
     "dotnet-compile-fsc": {
@@ -31,7 +30,7 @@
     }
   },
   "frameworks": {
-    "netstandard1.5": {
+    "netcoreapp1.0": {
       "imports": [
         "portable-net45+win8",
         "dnxcore50"
