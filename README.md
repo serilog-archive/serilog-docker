@@ -53,9 +53,15 @@ This repo also contains the following samples
 * Web App
 * FSharp Web App
 
-To run these, run `docker-compose -f samples.yml up`
+To run these, run `docker-compose -f samples.yml up --build`
 
-This will build & run the samples. The console app periodically does a HTTP GET to the sample web apps. Both are configured to use Serilog and `Serilog.Extensions.Logging`.   
+This will 
+* Build & run the sample docker images. 
+* The console app periodically does a HTTP GET to the
+    * `C#` Kestrel Sample
+    * `F#` Kestrel Sample 
+* The console app also logs to the [Literate](https://github.com/serilog/serilog-sinks-literate) and [Splunk](https://github.com/serilog/serilog-sinks-splunk) sinks. 
+* The web apps are also configured to use Serilog via `Microsoft.Extensions.Logging` & `Serilog.Extensions.Logging`.   
 
 ### Example Output
 
