@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "Serilog.Sinks.Literate": "2.0.0",
-    "Serilog.Sinks.Splunk": "2.0.0",
+    "Serilog.Sinks.Splunk": "2.0.1",
     "Serilog.Extensions.Logging": "1.0.0",
     "System.Collections.Concurrent": "4.0.12",
     "System.Threading.Tasks": "4.0.11",
