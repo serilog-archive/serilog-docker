@@ -1,0 +1,24 @@
+version: '2'
+
+services:      
+  seq:
+    build: ./seq
+    image: serilog-seq-server
+    ports:
+      - 5341:5341
+    tty: true
+  web-sample:
+    build: ./web-sample/src
+    image: serilog-web-sample
+    environment:
+      Serilog__WriteTo__1__Args__serverUrl: http://seq:5341/
+    depends_on:
+      - "seq"
+    ports:
+      - 5000:5000
+    tty: true    
+
+networks:
+  default:
+    external:
+      name: nat
