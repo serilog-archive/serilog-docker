@@ -9,10 +9,13 @@ A docker image for testing Serilog on *nix platforms.  Also some sample apps.
 
 ## Serilog
 - Clone this repo.
-- Run `docker-compose up` .  This will 
-    * pull the images
+- Run `docker-compose build` to:
+    + pull the images
+    + build a docker image
+- Run `docker-compose up` to:
     * pull the Serilog repo, 
     * build and test the lastest `dev` branch code from https://github.com/serilog/serilog.
+- To enter the container with out using compose, use `docker run -it --entrypoint=/bin/bash serilog`
 
 ### Example Output
 
