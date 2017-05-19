@@ -1,11 +1,11 @@
-FROM microsoft/dotnet 
+FROM microsoft/dotnet:1.1.2-sdk
 
 #Dependencies
 ENV SERILOG_BRANCH dev 
 ENV SERILOG_REPO https://github.com/serilog/serilog.git
 
 # Get Git and Friends
-RUN apt-get update \ 
+RUN apt-get update \
 	&& apt-get install -y wget curl git \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
