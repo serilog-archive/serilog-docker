@@ -1,3 +1,3 @@
-FROM outcoldman/splunk:6.4.1 
-
+FROM splunk/splunk
+# :6.5.3
 ADD etc ${SPLUNK_HOME}/etc
