@@ -9,6 +9,8 @@ services:
     image: serilog-web-sample 
     ports:
       - 5000:5000
+    depends_on:
+      - "seq"
   fswebsample:
     build: ./fsharp-kestrel-sample
     image: serilog-fsharp-kestrel-sample 
@@ -24,4 +26,10 @@ services:
     environment:
       SPLUNK_START_ARGS: --accept-license --answer-yes
       SPLUNK_USER: root
-    
+  seq:
+    image: datalust/seq
+    environment:
+        ACCEPT_EULA: "Y"
+    ports:
+      - 5341:5341
+      - 80:80

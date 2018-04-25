@@ -10,16 +10,17 @@ namespace Sample
     {
         public static void Main(string[] args)
         {
-            var logger = new LoggerConfiguration()
+            Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug() 
-                .WriteTo.LiterateConsole()
+                .WriteTo.Console()
+                .WriteTo.Seq("http://seq:5341/")
                 .WriteTo.EventCollector("http://splunk:8088/","00112233-4455-6677-8899-AABBCCDDEEFF")
                 .Enrich.WithProperty("App Name", "Serilog Console Docker Sample")
                 .CreateLogger();
 
             Log.Information("Starting Serilog Console Sample");
             
-            Go(logger).Wait();
+            Go(Log.Logger).Wait();
             
          }
          
