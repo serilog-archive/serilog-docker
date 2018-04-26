@@ -218,3 +218,8 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 *.orig
+
+.vscode
+
+web-sample/src/out/
+console-sample/src/out/

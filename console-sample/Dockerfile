@@ -1,6 +1,10 @@
-FROM microsoft/dotnet:1.1.2-sdk
+FROM microsoft/dotnet:2.0-sdk AS build
+WORKDIR /sample
 ADD src /sample
-COPY entry_point.sh entry_point.sh
-RUN chmod +x /entry_point.sh
- 
-ENTRYPOINT ["/entry_point.sh"] 
+RUN dotnet restore
+RUN dotnet publish -c Release -o out
+
+FROM microsoft/dotnet:2.0-runtime AS runtime
+WORKDIR /sample
+COPY --from=build /sample/out ./
+ENTRYPOINT ["dotnet", "console-sample.dll"]
