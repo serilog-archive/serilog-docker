@@ -11,6 +11,7 @@ services:
       - 5000:5000
     depends_on:
       - "seq"
+      - "sql"
   fswebsample:
     build: ./fsharp-kestrel-sample
     image: serilog-fsharp-kestrel-sample 
@@ -24,12 +25,19 @@ services:
       - 8088:8088
       - 8089:8089
     environment:
-      SPLUNK_START_ARGS: --accept-license --answer-yes
-      SPLUNK_USER: root
+      SPLUNK_START_ARGS: "--accept-license --answer-yes"
+      SPLUNK_USER: "root"
   seq:
     image: datalust/seq
     environment:
-        ACCEPT_EULA: "Y"
+      ACCEPT_EULA: "Y"
     ports:
       - 5341:5341
       - 80:80
+  sql:
+    build: ./sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "test1234****"
+    ports: 
+      - 1433:1433

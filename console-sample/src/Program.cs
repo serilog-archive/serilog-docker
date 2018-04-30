@@ -5,16 +5,22 @@ using System.Net;
 using System.Net.Http;
 
 namespace Sample
-{
+{ 
     public static class Program
-    {
+    { 
         public static void Main(string[] args)
         {
+            Serilog.Debugging.SelfLog.Enable(Console.Error);
+            
+            
+            var connectionString = @"Server=sql;Database=Serilog;User=sa;Password=test1234****;";
+
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug() 
                 .WriteTo.Console()
                 .WriteTo.Seq("http://seq:5341/")
                 .WriteTo.EventCollector("http://splunk:8088/","00112233-4455-6677-8899-AABBCCDDEEFF")
+                .WriteTo.MSSqlServer(connectionString, "Logs", autoCreateSqlTable: true)
                 .Enrich.WithProperty("App Name", "Serilog Console Docker Sample")
                 .CreateLogger();
 
