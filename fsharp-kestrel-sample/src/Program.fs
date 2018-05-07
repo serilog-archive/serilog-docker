@@ -28,7 +28,7 @@ module Program =
         Log.Logger <- LoggerConfiguration()
             .ReadFrom.Configuration(Configuration)
             .Enrich.WithProperty("App Name", "Serilog F# Kestrel Sample")
-            .CreateLogger();
+            .CreateLogger()
 
         Log.Information("Starting with arguments {Args}", args)
 
@@ -38,7 +38,7 @@ module Program =
                 successExitCode
             with
             | ex ->
-                Log.Fatal(ex, "Host terminated unexpectedly");
+                Log.Fatal(ex, "Host terminated unexpectedly")
                 failureExitCode
         finally
             Log.Information("Shutting down")
